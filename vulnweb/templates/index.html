@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <script>
+        
+        function manipulateDOM() {
+            let hash = window.location.hash.substring(1); 
+            if (hash) {
+                let decodedHash = decodeURIComponent(hash); 
+                document.getElementById('output').innerHTML = decodedHash; 
+            }
+        }
+        window.onload = manipulateDOM;
+    </script>
+</head>
+<body>
+    <h1>Welcome to the Vulnerable Web App</h1>
+    <p>Use the hash in the URL to manipulate this message.</p>
+    <div id="output">Not data yet</div>
+    <a href="/post/1">Comment on our last post</a>
+    <a href="/search?q=test">Search our posts</a>
+</body>
+</html>
